@@ -1,1 +1,6 @@
 /projet/target/
+out
+.idea
+*.iml
+env
+
