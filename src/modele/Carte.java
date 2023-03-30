@@ -30,6 +30,8 @@ public class Carte {
         paquet.add("joker_noir");
         cartesNumerosBridgeMap.put("joker_rouge", 53);
         paquet.add("joker_rouge");
+        System.out.println(cartesNumerosBridgeMap);
+        System.out.println(paquet);
     }
     public void reculJokerNoir(){
         System.out.println(paquet);
@@ -104,46 +106,24 @@ public class Carte {
         System.out.println(paquet);
     }
 
-
-    /*
-     public static char lireLettrePseudoAleatoire(List<Integer> paquet, List<Character> clefs) {
-    int n = paquet.get(0);
-    int index = n;
-    if (index > 26) {
-        index -= 26;
-    }
-    while (true) {
-        if (paquet.get(index) == 53) { // Joker trouvé
-            melangerPaquet(paquet); // Mélanger le paquet
-            index = paquet.get(n);
-            if (index > 26) {
-                index -= 26;
-            }
-        } else {
-            break;
+    public void lectureLettrePseudoAleatoire(){
+        int numeroPremiereCarte = cartesNumerosBridgeMap.get(paquet.get(2));
+        System.out.println(numeroPremiereCarte);
+        int numeroCarte = cartesNumerosBridgeMap.get(paquet.get(numeroPremiereCarte));
+        System.out.println(numeroCarte);
+        if (numeroCarte == 53){
+            this.reculJokerNoir();
+            this.reculJokerRouge();
+            this.doubleCoupeParRapportAuxJokers();
+            this.coupeSimpleSelonDerniereCarte();
+            this.lectureLettrePseudoAleatoire();
         }
+        else if (numeroCarte>26){
+            numeroCarte = numeroCarte-26;
+        }
+        System.out.println("La lettre pseudo aléatoire est : "+(char)(numeroCarte+64));
     }
-    char lettre = clefs.get(index - 1);
-    return lettre;
-}
 
-public static void melangerPaquet(List<Integer> paquet) {
-    Collections.shuffle(paquet.subList(1, paquet.size()));
-}
-
-public static List<Integer> initialiserPaquet() {
-    List<Integer> paquet = new ArrayList<>();
-    for (int i = 0; i < 54; i++) {
-        paquet.add(i);
-    }
-    return paquet;\n}\n\npublic static List<Character> initialiserClefs() {
-    List<Character> clefs = new ArrayList<>();
-    for (char c = 'A'; c <= 'Z'; c++) {\n        clefs.add(c);
-    }
-    return clefs;
-}
-
-     */
 
 
     public int getNumeroCarte(String carte) {
