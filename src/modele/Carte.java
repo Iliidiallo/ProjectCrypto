@@ -104,6 +104,48 @@ public class Carte {
         System.out.println(paquet);
     }
 
+
+    /*
+     public static char lireLettrePseudoAleatoire(List<Integer> paquet, List<Character> clefs) {
+    int n = paquet.get(0);
+    int index = n;
+    if (index > 26) {
+        index -= 26;
+    }
+    while (true) {
+        if (paquet.get(index) == 53) { // Joker trouvé
+            melangerPaquet(paquet); // Mélanger le paquet
+            index = paquet.get(n);
+            if (index > 26) {
+                index -= 26;
+            }
+        } else {
+            break;
+        }
+    }
+    char lettre = clefs.get(index - 1);
+    return lettre;
+}
+
+public static void melangerPaquet(List<Integer> paquet) {
+    Collections.shuffle(paquet.subList(1, paquet.size()));
+}
+
+public static List<Integer> initialiserPaquet() {
+    List<Integer> paquet = new ArrayList<>();
+    for (int i = 0; i < 54; i++) {
+        paquet.add(i);
+    }
+    return paquet;\n}\n\npublic static List<Character> initialiserClefs() {
+    List<Character> clefs = new ArrayList<>();
+    for (char c = 'A'; c <= 'Z'; c++) {\n        clefs.add(c);
+    }
+    return clefs;
+}
+
+     */
+
+
     public int getNumeroCarte(String carte) {
         return this.cartesNumerosBridgeMap.get(carte);
     }
