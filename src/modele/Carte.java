@@ -34,6 +34,7 @@ public class Carte {
         System.out.println(paquet);
     }
     public void reculJokerNoir(){
+        System.out.println("recul joker noir");
         System.out.println(paquet);
         int indexJokerNoir = paquet.indexOf("joker_noir");
         // on vérifie si le joker noir est à la fin du paquet et on le déplace à la deuxième position
@@ -46,6 +47,7 @@ public class Carte {
         System.out.println(paquet);
     }
     public void reculJokerRouge(){
+        System.out.println("recul joker rouge");
         //On fait reculer le joker rouge de deux positions
         int indexJokerRouge = paquet.indexOf("joker_rouge");
         if (indexJokerRouge == 53){
@@ -70,12 +72,12 @@ public class Carte {
         ArrayList<String> borneCent;
         if (indexJokerRouge<indexJokerNoir){
             borneInf = new ArrayList(paquet.subList(0, indexJokerRouge));
-            borneSup = indexJokerNoir==53?new ArrayList():new ArrayList(paquet.subList(indexJokerNoir+1, 53));
+            borneSup = indexJokerNoir==53?new ArrayList():new ArrayList(paquet.subList(indexJokerNoir+1, 54));
             borneCent = new ArrayList(paquet.subList(indexJokerRouge,indexJokerNoir+1));
         }
         else{
             borneInf = new ArrayList(paquet.subList(0, indexJokerNoir));
-            borneSup = indexJokerRouge==53?new ArrayList():new ArrayList(paquet.subList(indexJokerRouge+1, 53));
+            borneSup = indexJokerRouge==53?new ArrayList():new ArrayList(paquet.subList(indexJokerRouge+1, 54));
             borneCent = new ArrayList(paquet.subList(indexJokerNoir,indexJokerRouge+1));
         }
         for (int i = 0; i < borneSup.size(); i++) {
@@ -92,11 +94,12 @@ public class Carte {
     }
 
     public void coupeSimpleSelonDerniereCarte(){
+        System.out.println("simple coupe");
         System.out.println(paquet);
         int numeroDerniereCarte = cartesNumerosBridgeMap.get(paquet.get(53));
         System.out.println(numeroDerniereCarte);
         ArrayList<String> borneInf = new ArrayList(paquet.subList(0, numeroDerniereCarte));
-        ArrayList<String> borneSup = new ArrayList(paquet.subList(numeroDerniereCarte, 53));
+        ArrayList<String> borneSup = new ArrayList(paquet.subList(numeroDerniereCarte, 54));
         for (int i = 0; i < borneSup.size(); i++) {
             paquet.set(i, borneSup.get(i));
         }
