@@ -24,9 +24,16 @@ public class Main {
       // carte.lectureLettrePseudoAleatoire();
 
         FluxDeClefs fluxDeClefs = new FluxDeClefs();
-        String message = "BB bbbbbbbbb";
+        String message = "SALAM &/";
         String messageCrypte = fluxDeClefs.crypterMessage(message,carte);
-        System.out.println(messageCrypte);
+
+
+        String messageDecrypte = fluxDeClefs.decrypterMessage(messageCrypte);
+
+        System.out.println("Le message crypté est "+messageCrypte);
+
+        System.out.println("Le message decrypté est "+messageDecrypte);
 
     }
 }
+

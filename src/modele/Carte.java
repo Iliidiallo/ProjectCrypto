@@ -8,6 +8,7 @@ import java.util.Collections;
 public class Carte {
     private Map<String, Integer> cartesNumerosBridgeMap;
     ArrayList<String> paquet = new ArrayList<>();
+    private int cle;
 
     public void initCarteAndMapBridge() {
         //Cartes Numeros Bridge Map permet de faire la correspondance entre les cartes et leur numéro selon l'ordre du bridge
@@ -111,15 +112,16 @@ public class Carte {
         }
        // System.out.println(paquet);
     }
-    public int lectureLettrePseudoAleatoire() {
+   public int lectureLettrePseudoAleatoire() {
 
         System.out.println("Lecture lettre pseudo aléatoire");
         System.out.println(paquet);
-        int numeroPremiereCarte = cartesNumerosBridgeMap.get(paquet.get(2));
+        int numeroPremiereCarte = cartesNumerosBridgeMap.get(paquet.get(0));
         System.out.println(numeroPremiereCarte);
         int numeroCarte = cartesNumerosBridgeMap.get(paquet.get(numeroPremiereCarte));
         // System.out.println(cartesNumerosBridgeMap);
         System.out.println(numeroCarte);
+        int cle; // Déclaration de la variable pour stocker la clé
         if (numeroCarte == 53) {
             this.reculJokerNoir();
             this.reculJokerRouge();
@@ -134,13 +136,22 @@ public class Carte {
             }
             System.out.println("La lettre pseudo aléatoire est : " + (char)(numeroCarte + 64));
             melangeCartes();
-            return numeroCarte;
+            //return numeroCarte;
         }
+        return  numeroCarte;
     }
+
     public void melangeCartes(){
         reculJokerNoir();
         reculJokerRouge();
         doubleCoupeParRapportAuxJokers();
         coupeSimpleSelonDerniereCarte();
     }
+
+    public int getCle() {
+        return cle;
+    }
+
+
+
 }
