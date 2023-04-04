@@ -30,6 +30,8 @@ public class Carte {
         paquet.add("joker_noir");
         cartesNumerosBridgeMap.put("joker_rouge", 53);
         paquet.add("joker_rouge");
+        // changer l'ordre dans paquet
+        Collections.shuffle(paquet);
         //System.out.println(cartesNumerosBridgeMap);
        // System.out.println(paquet);
     }
@@ -136,7 +138,6 @@ public class Carte {
             }
             System.out.println("La lettre pseudo aléatoire est : " + (char)(numeroCarte + 64));
             melangeCartes();
-            //return numeroCarte;
         }
         return  numeroCarte;
     }
@@ -147,11 +148,6 @@ public class Carte {
         doubleCoupeParRapportAuxJokers();
         coupeSimpleSelonDerniereCarte();
     }
-
-    public int getCle() {
-        return cle;
-    }
-
 
 
 }

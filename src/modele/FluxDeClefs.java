@@ -1,7 +1,9 @@
 package modele;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class FluxDeClefs {
     private List<Integer> codes;
@@ -9,6 +11,8 @@ public class FluxDeClefs {
     public FluxDeClefs() {
         codes = new ArrayList<>();
     }
+
+    //methode pour crypter un message
    public String crypterMessage(String message, Carte carte) {
        String messageCrypte = "";
        for (int i = 0; i < message.length(); i++) {
@@ -30,6 +34,36 @@ public class FluxDeClefs {
        return messageCrypte;
    }
 
+   //methode pour crypter un Fichier
+   public String crypterFichier(String cheminVersFichier, Carte carte) {
+       try {
+           FileReader fileReader = new FileReader(cheminVersFichier);
+           BufferedReader bufferedReader = new BufferedReader(fileReader);
+           String ligne;
+           String messageCrypte = "";
+           while ((ligne = bufferedReader.readLine()) != null) {
+               messageCrypte += this.crypterMessage(ligne, carte) + "\n";
+           }
+           bufferedReader.close();
+
+           FileWriter fileWriter = new FileWriter(cheminVersFichier + ".crypte");
+           BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+           bufferedWriter.write(messageCrypte);
+           bufferedWriter.close();
+
+
+           return messageCrypte;
+       } catch (IOException e) {
+           e.printStackTrace();
+           return "";
+       }
+   }
+
+
+
+
+
+//methode pour decrypter un message
     public String decrypterMessage(String message) {
         String messageDecrypte = "";
         int indexCode = 0;
@@ -37,7 +71,7 @@ public class FluxDeClefs {
             char lettre = message.charAt(i);
             if (Character.isLetter(lettre)) {
                 int numeroLettreCryptee = (int) lettre;
-                int code = codes.get(indexCode);
+                int code = this.codes.get(indexCode);
                 int numeroLettre = numeroLettreCryptee - code;
                 char lettreDecryptee;
                 if (Character.isUpperCase(lettre)) {
@@ -51,6 +85,23 @@ public class FluxDeClefs {
         }
         return messageDecrypte;
     }
+//methode pour decrypter un fichier
+public String decrypteFichier(String fichierCrypte) {
+    String fichierDecrypte = "";
+    try {
+        Scanner scanner = new Scanner(new File(fichierCrypte));
+        while (scanner.hasNextLine()) {
+            String ligne = scanner.nextLine();
+            System.out.println(ligne);
+            fichierDecrypte += decrypterMessage(ligne) + "\n";
+        }
+        scanner.close();
+    } catch (FileNotFoundException e) {
+        System.out.println("Le fichier n'a pas été trouvé : " + e.getMessage());
+    }
+    return fichierDecrypte;
+}
+
 
 }
 
