@@ -14,6 +14,7 @@ public class FluxDeClefs {
 
     //methode pour crypter un message
    public String crypterMessage(String message, Carte carte) {
+       codes.clear();
        String messageCrypte = "";
        for (int i = 0; i < message.length(); i++) {
            char lettre = message.charAt(i);
@@ -46,7 +47,7 @@ public class FluxDeClefs {
            }
            bufferedReader.close();
 
-           FileWriter fileWriter = new FileWriter(cheminVersFichier + ".crypte");
+           FileWriter fileWriter = new FileWriter(cheminVersFichier+"_crypte" + ".txt");
            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
            bufferedWriter.write(messageCrypte);
            bufferedWriter.close();
