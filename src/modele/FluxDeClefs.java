@@ -14,11 +14,17 @@ public class FluxDeClefs {
 
     //methode pour crypter un message
    public String crypterMessage(String message, Carte carte){
+        ArrayList<Character> caracSpeciale = new ArrayList<>();
+        caracSpeciale.add('é');
+        caracSpeciale.add('è');
+        caracSpeciale.add('œ');
+        caracSpeciale.add('ê');
+        caracSpeciale.add('ù');
        codes.clear();
        String messageCrypte = "";
        for (int i = 0; i < message.length(); i++) {
            char lettre = message.charAt(i);
-           if (String.valueOf(lettre).equals("é")||String.valueOf(lettre).equals("è")||String.valueOf(lettre).equals("^")||String.valueOf(lettre).equals("$")||String.valueOf(lettre).equals("œ")||String.valueOf(lettre).equals("ç")||String.valueOf(lettre).equals("ù")){
+           if (caracSpeciale.contains(lettre)){
                lettre = '&';
            }
            if (Character.isLetter(lettre)) {
