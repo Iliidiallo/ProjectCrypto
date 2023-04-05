@@ -6,8 +6,8 @@ import modele.FluxDeClefs;
 public class Main {
 
     public static void main(String[] args) {
-        Carte carte = new Carte();
-        carte.initCarteAndMapBridge();
+        //Carte carte = new Carte();
+        //carte.initCarteAndMapBridge();
      //   for (int i = 0; i < 20; i++) {
         //carte.reculJokerRouge();
        // }
@@ -23,8 +23,8 @@ public class Main {
 
       // carte.lectureLettrePseudoAleatoire();
 
-        FluxDeClefs fluxDeClefs = new FluxDeClefs();
-        String message = "SALAM &/";
+        //FluxDeClefs fluxDeClefs = new FluxDeClefs();
+        //String message = "SALAM &/";
        // String messageCrypte = fluxDeClefs.crypterMessage(message,carte);
 
 
@@ -33,13 +33,13 @@ public class Main {
         //System.out.println("Le message crypté est "+messageCrypte);
 
        // System.out.println("Le message decrypté est "+messageDecrypte);
-        String cheminFichier = "/home/diallo/Bureau/MASTER 1/S8/Crypto/crypto.txt";
+        //String cheminFichier = "/home/diallo/Bureau/MASTER 1/S8/Crypto/crypto.txt";
         // Crypter le fichier
-        String fichierCrypte=fluxDeClefs.crypterFichier(cheminFichier, carte);
-        System.out.println("Le fichier est crypté avec succes et voila ce que ça donne "+fichierCrypte);
+        //String fichierCrypte=fluxDeClefs.crypterFichier(cheminFichier, carte);
+        //System.out.println("Le fichier est crypté avec succes et voila ce que ça donne "+fichierCrypte);
 
-        String fichierDecrypte=fluxDeClefs.decrypteFichier(cheminFichier+".crypte");
-        System.out.println("Le fichier est decrypté avec succes et voila ce que ça donne "+fichierDecrypte );
+        //String fichierDecrypte=fluxDeClefs.decrypteFichier(cheminFichier+".crypte");
+       // System.out.println("Le fichier est decrypté avec succes et voila ce que ça donne "+fichierDecrypte );
 
         // Lire le fichier crypté et le décrypter
       //  String cheminFichierCrypte = "chemin/vers/votre/fichier_crypte.txt";

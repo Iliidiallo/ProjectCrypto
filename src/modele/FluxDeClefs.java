@@ -24,7 +24,7 @@ public class FluxDeClefs {
                codes.add(code);
                int numeroLettreCryptee = numeroLettre + code;
                char lettreCryptee;
-               if (Character.isUpperCase(lettre)) {
+               if (Character.isUpperCase(lettre) ) {
                    lettreCryptee = (char) (numeroLettreCryptee > 'Z' ? numeroLettreCryptee - 26 : numeroLettreCryptee);
                } else {
                    lettreCryptee = (char) (numeroLettreCryptee > 'z' ? numeroLettreCryptee - 26 : numeroLettreCryptee);
