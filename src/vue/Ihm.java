@@ -272,7 +272,6 @@ public class Ihm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bCrypterMessage1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrypterMessage1ActionPerformed
-        // TODO add your handling code here:
         String message = jMessageCrypte1.getText();
         if(message.equals("")){
             JOptionPane.showMessageDialog(null, "Veuillez entrer un message", "Erreur", JOptionPane.ERROR_MESSAGE);
@@ -292,7 +291,6 @@ public class Ihm extends javax.swing.JFrame {
     }//GEN-LAST:event_bCrypterMessage1ActionPerformed
 
     private void bCrypterMessage2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrypterMessage2ActionPerformed
-        // TODO add your handling code here:
         String message = jMessageCrypte1.getText();
         if(message.equals("")){
             JOptionPane.showMessageDialog(null, "Veuillez entrer un message", "Erreur", JOptionPane.ERROR_MESSAGE);
@@ -314,7 +312,6 @@ public class Ihm extends javax.swing.JFrame {
     }
 
     private void bDecrypterMessage1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDecrypterMessage1ActionPerformed
-        // TODO add your handling code here:
         String message = jTextPane1jMessageCrypte2.getText();
         if(message.equals("")){
             JOptionPane.showMessageDialog(null, "Veuillez entrer un message", "Erreur", JOptionPane.ERROR_MESSAGE);
@@ -336,7 +333,6 @@ public class Ihm extends javax.swing.JFrame {
     }//GEN-LAST:event_bDecrypterMessage1ActionPerformed
 
     private void bCrypterFichier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrypterFichier1ActionPerformed
-        // TODO add your handling code here:
         //methode parcourir fichier du pc et appeler la methode crypter fichier
         try {
             JFileChooser chooser = new JFileChooser();
@@ -359,7 +355,6 @@ public class Ihm extends javax.swing.JFrame {
     }
 
     private void bDecrypterFichier2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDecrypterFichier2ActionPerformed
-        // TODO add your handling code here:
         //methode pour decrypter un fichier du pc et appeler la methode decrypter fichier
         try {
             JFileChooser chooser = new JFileChooser();
@@ -383,7 +378,6 @@ public class Ihm extends javax.swing.JFrame {
     }//GEN-LAST:event_bDecrypterFichier2ActionPerformed
 
     private void bDecrypterFichier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDecrypterFichier1ActionPerformed
-        // TODO add your handling code here:
         //methode pour decrypter un fichier du pc et appeler la methode decrypter fichier
         try {
             JFileChooser chooser = new JFileChooser();
@@ -406,7 +400,6 @@ public class Ihm extends javax.swing.JFrame {
     }//GEN-LAST:event_bDecrypterFichier1ActionPerformed
 
     private void bDecrypterMessage2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDecrypterMessage2ActionPerformed
-        // TODO add your handling code here:
         String message = jTextPane1jMessageCrypte2.getText();
         if(message.equals("")){
             JOptionPane.showMessageDialog(null, "Veuillez entrer un message", "Erreur", JOptionPane.ERROR_MESSAGE);
@@ -426,7 +419,6 @@ public class Ihm extends javax.swing.JFrame {
     }//GEN-LAST:event_bDecrypterMessage2ActionPerformed
 
     private void bCrypterFichier2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCrypterFichier2ActionPerformed
-        // TODO add your handling code here:
         //methode parcourir fichier du pc et appeler la methode crypter fichier
         try {
             JFileChooser chooser = new JFileChooser();
@@ -449,16 +441,13 @@ public class Ihm extends javax.swing.JFrame {
     }//GEN-LAST:event_bCrypterFichier2ActionPerformed
 
     private void jboutonHautActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jboutonHautActionPerformed
-        // TODO add your handling code here:
 
     }//GEN-LAST:event_jboutonHautActionPerformed
 
     private void user1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_user1ActionPerformed
 
     private void user2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user2ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_user2ActionPerformed
 
     /**
