@@ -35,7 +35,7 @@ public class Ihm extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void  initComponents() {
 
         PanelHaut = new javax.swing.JPanel();
         jboutonHaut = new javax.swing.JButton();

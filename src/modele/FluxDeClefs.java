@@ -13,11 +13,14 @@ public class FluxDeClefs {
     }
 
     //methode pour crypter un message
-   public String crypterMessage(String message, Carte carte) {
+   public String crypterMessage(String message, Carte carte){
        codes.clear();
        String messageCrypte = "";
        for (int i = 0; i < message.length(); i++) {
            char lettre = message.charAt(i);
+           if (String.valueOf(lettre).equals("é")||String.valueOf(lettre).equals("è")||String.valueOf(lettre).equals("^")||String.valueOf(lettre).equals("$")||String.valueOf(lettre).equals("œ")||String.valueOf(lettre).equals("ç")||String.valueOf(lettre).equals("ù")){
+               lettre = '&';
+           }
            if (Character.isLetter(lettre)) {
                int numeroLettre = (int) lettre;
                int code = carte.lectureLettrePseudoAleatoire();
